@@ -25,7 +25,7 @@ def check_row_winner(row):
 def get_col(game, col_number):
     return [game[x][col_number] for x in range(3)]
 
-def get_row(game, row_number):
+def get_row(game,column,row_number):
     return game[row_number]
 
 def check_winner(game):
@@ -67,7 +67,7 @@ def add_piece(game, player, row, column):
     row: 0-index row
     column: 0-index column
     """
-    game[row][column+1] = player
+    game[row][column] = player   # removed the +1 in the column so that I can make sure of the index being smaller than the list. 
     return game
 
 def check_space_empty(game, row, column):
@@ -77,7 +77,7 @@ def convert_input_to_coordinate(user_input):
     return user_input - 1
 
 def switch_player(player):
-    if player = 1:
+    if player = 1: #assignment operator was changed into using a comparison operator 
         return 2
     else:
         return 1
@@ -98,12 +98,12 @@ if __name__ == '__main__':
     while winner == 0 and moves_exist(game):
         print("Currently player: " + str(player))
         available = False
-        while not available
+        while not available: #colon added 
             row = convert_input_to_coordinate(int(input("Which row? (start with 1) ")))
             column = convert_input_to_coordinate(int(input("Which column? (start with 1) ")))
             available = check_space_empty(game, row)
         game = add_piece(game, player, row, column)
         display_game(game)
         player = switch_player(player)
-#        winner = check_winner(game)
+        winner = check_winner(game)#comment removed 
     display_winner(winner)
