@@ -17,30 +17,30 @@
 # Exams: 50, 51, 0
 # Average: 33
 # Grade: F
-# Student iis failing.
+# Student is failing.
 
 exam_one = int(input("Input exam grade one: "))
-
-exam_two = input("Input exam grade two: "))
-
-exam_3 = str(input("Input exam grade three: "))
-
-grades = [exam_one exam_two exam_three]
+#convert the input to integer
+exam_two = int(input("Input exam grade two: "))
+#the input was converted to an integer and the variable was changed to exam_three from exam_3
+exam_three = int(input("Input exam grade three: "))
+#added comas to grades
+grades = [exam_one, exam_two, exam_three]
 sum = 0
-for grade in grade:
+for grade in grades: #the list variable was changed from grade into grades 
   sum = sum + grade
-
-avg = sum / len(grdes)
+#spelling mistake for grades 
+avg = sum / len(grades)
 
 if avg >= 90:
     letter_grade = "A"
-elif avg >= 80 and avg < 90
+elif avg >= 80 and avg < 90: #colon was missing 
     letter_grade = "B"
 elif avg > 69 and avg < 80:
-    letter_grade = "C'
-elif avg <= 69 and avg >= 65:
+    letter_grade = "C" # the single qoutation was changed into double qoutations 
+elif avg <= 69 and avg >= 70: # changed the value from 65 to 70 
     letter_grade = "D"
-elif:
+else: #elif command changed into else 
     letter_grade = "F"
 
 for grade in grades:
@@ -50,7 +50,7 @@ for grade in grades:
 
     print("Grade: " + letter_grade)
 
-if letter-grade is "F":
-    print "Student is failing."
+if letter_grade == "F": # letter-grade was changed to _ and removed is and put ==
+    print ("Student is failing.") #added missing brackets 
 else:
-    print "Student is passing."
+    print ("Student is passing.")#missing brackets added 
